@@ -9,6 +9,7 @@
         List<string> Ingredients { get; set; }
         bool IsGlutenFree { get; set; }
         bool IsVegetarian { get; }
+        List<PizzaSizePrice> SizePrices { get; set; }
         void UpdateIsVegetarian();
     }
 }

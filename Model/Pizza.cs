@@ -10,12 +10,7 @@
         public bool IsGlutenFree { get; set; }
         public bool IsVegetarian { get; set; }
         public List<string> Ingredients { get; set; } = new List<string>();
-        public List<PizzaSizePrice> SizePrices { get; set; } = new()
-        {
-            new PizzaSizePrice { Size = "Small", Price = 10 },
-            new PizzaSizePrice { Size = "Medium", Price = 15 },
-            new PizzaSizePrice { Size = "Large", Price = 20 }
-        };
+        public List<PizzaSizePrice> SizePrices { get; set; } = new();
         public void UpdateIsVegetarian()
         {
             var meatIngredients = new List<string>

@@ -15,6 +15,8 @@ namespace DSD601_Pizza_App.Pages
         public List<IPizza> AvailablePizzas { get; set; } = new();
         public SelectList PizzaSelectList { get; set; } = null!;
 
+        public bool FirstLoad { get; set; } = true;
+
         private readonly ILogger<IndexModel> _logger;
 
         public IndexModel(ILogger<IndexModel> logger)
@@ -30,6 +32,7 @@ namespace DSD601_Pizza_App.Pages
 
         public void OnPost()
         {
+            FirstLoad = false;
             AvailablePizzas = Factory.GetAllPizzas();
             PizzaSelectList = new SelectList(AvailablePizzas, "Flavour", "Flavour");
             if (!string.IsNullOrEmpty(SelectedPizzaType))

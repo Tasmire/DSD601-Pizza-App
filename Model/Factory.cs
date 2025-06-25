@@ -5,12 +5,12 @@ namespace DSD601_Pizza_App.Model
     {
         public static Pizza GetPizza(string pizzaType)
         {
-            if (pizzaType == "CheesyGarlic")
+            if (pizzaType == "Cheesy Garlic")
             { 
                 return new CheesyGarlic();
             }
 
-            if (pizzaType == "ChickenCranberry")
+            if (pizzaType == "Chicken Cranberry")
             {
                 return new ChickenCranberry();
             }

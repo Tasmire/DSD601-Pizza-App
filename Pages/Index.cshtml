@@ -6,28 +6,61 @@
 
 <div class="card" style=" margin-top: 20px">
     <div class="card-header">
-        <h1>Carpet Cost Calculator</h1>
+        <h1>Pizza Menu</h1>
     </div>
     <div class="card-body">
-        <h3 class="mb-4">Purchasing Options</h3>
-        <form method="post">
-            <div class="form-group">
-                <div class="row mb-5">
-                    <div class="col-4 text-center">
-                        <select asp-for="@Model.SelectedPizzaType" asp-items="@Model.PizzaSelectList">
-                            <option value="">-- Select a Pizza --</option>
-                        </select>
-                        <button type="submit">Show Pizza Details</button>
-                    </div>
-                </div>
+        <h3 class="mb-4">Choose Your Pizza</h3>
+        <form method="post" class="mb-3">
+            <div>
+                <select asp-for="@Model.SelectedPizzaType" asp-items="@Model.PizzaSelectList">
+                </select>
+                <button type="submit" class="btn btn-primary">Show Pizza Details</button>
             </div>
         </form>
     </div>
     <div class="card-footer">
-        <h3 class="mb-3">Pizza </h3>
         <div class="row">
-            <!--raw HTML so line breaks are displayed correctly-->
-            <p class="card-text"></p>
+            @if (Model.FirstLoad == false)
+            {
+                <img src="@Model.SelectedPizza.ImageUrl" alt="Image of a @Model.SelectedPizza.Flavour pizza" style="max-height:600px; max-width:800px;" class="mb-3 mx-auto">
+                <p class="card-text">@Model.SelectedPizza.Description</p>
+                if (Model.SelectedPizza.IsGlutenFree)
+                {
+                    <p class="card-text">This pizza is gluten free.</p>
+                } else
+                {
+                    <p class="card-text">This pizza contains gluten.</p>
+                }
+                if (Model.SelectedPizza.IsVegetarian)
+                {
+                    <p class="card-text">This pizza is vegetarian.</p>
+                }
+                <div class="card bg-secondary-subtle pt-2 mb-2">
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="card-title mb-3">Ingredients</h5>
+                            <ul class="list-unstyled">
+                                @foreach (var item in Model.SelectedPizza.Ingredients)
+                                {
+                            
+                                    <li class="list-item-box">@item</li>
+                                }
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <h5 class="card-title mb-3">Cost</h5>
+                            <ul class="list-unstyled">
+                                @foreach (var item in Model.SelectedPizza.SizePrices)
+                                {
+
+                                    <li class="list-item-box">@item.Size - $@item.Price</li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-text">This pizza was created by @Model.SelectedPizza.PizzaChef.</p>
+            }
         </div>
     </div>
 </div>
