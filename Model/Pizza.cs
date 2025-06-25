@@ -27,5 +27,10 @@
                 .Any(i => meatIngredients
                     .Any(meat => i.Contains(meat, StringComparison.OrdinalIgnoreCase)));
         }
+
+        public virtual void PizzaChefName()
+        {
+            PizzaChef = "Default Chef";
+        }
     }
 }
