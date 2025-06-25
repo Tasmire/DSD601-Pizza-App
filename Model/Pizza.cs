@@ -10,11 +10,11 @@
         public bool IsGlutenFree { get; set; }
         public bool IsVegetarian { get; set; }
         public List<string> Ingredients { get; set; } = new List<string>();
-        public Dictionary<string, decimal> SizePrices { get; set; } = new()
+        public List<PizzaSizePrice> SizePrices { get; set; } = new()
         {
-            { "Small", 10m },
-            { "Medium", 15m },
-            { "Large", 20m }
+            new PizzaSizePrice { Size = "Small", Price = 10 },
+            new PizzaSizePrice { Size = "Medium", Price = 15 },
+            new PizzaSizePrice { Size = "Large", Price = 20 }
         };
         public void UpdateIsVegetarian()
         {
