@@ -1,6 +1,6 @@
 ﻿namespace DSD601_Pizza_App.Model
 {
-    public class ChickenCranberry :Pizza
+    public class ChickenCranberry :Pizza, IPizza
     {
         public ChickenCranberry()
         {

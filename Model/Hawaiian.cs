@@ -1,6 +1,6 @@
 ﻿namespace DSD601_Pizza_App.Model
 {
-    public class Hawaiian :Pizza
+    public class Hawaiian :Pizza, IPizza
     {
         public Hawaiian()
         {

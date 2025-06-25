@@ -4,7 +4,30 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="card" style=" margin-top: 20px">
+    <div class="card-header">
+        <h1>Carpet Cost Calculator</h1>
+    </div>
+    <div class="card-body">
+        <h3 class="mb-4">Purchasing Options</h3>
+        <form method="post">
+            <div class="form-group">
+                <div class="row mb-5">
+                    <div class="col-4 text-center">
+                        <select asp-for="@Model.SelectedPizzaType" asp-items="@Model.PizzaSelectList">
+                            <option value="">-- Select a Pizza --</option>
+                        </select>
+                        <button type="submit">Show Pizza Details</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="card-footer">
+        <h3 class="mb-3">Pizza </h3>
+        <div class="row">
+            <!--raw HTML so line breaks are displayed correctly-->
+            <p class="card-text"></p>
+        </div>
+    </div>
 </div>

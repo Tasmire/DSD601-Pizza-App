@@ -1,6 +1,6 @@
 ﻿namespace DSD601_Pizza_App.Model
 {
-    public class CheesyGarlic :Pizza
+    public class CheesyGarlic :Pizza, IPizza
     {
         public CheesyGarlic()
         {
