@@ -1,0 +1,2 @@
+﻿Upon starting this program, the home page will be blank aside from the pizza select section. To view pizza details, choose a flavour from the dropdown menu and click "Show Pizza Details". Now, you can see all sorts of information such as a description of the pizza, ingredients, price and more. To change your selection, simply choose another pizza from the dropdown menu and click the button again.
+There is a short video included in this project folder showcasing the functionality of the program.
